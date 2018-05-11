@@ -42,7 +42,7 @@ export default () => {
       <Link href="https://www.linkedin.com/in/kurtdipaolo/">
         <Linkedin />
       </Link>
-      <Link href="/dipaolo_resume.pdf">
+      <Link href="/portfolio/dipaolo_resume.pdf">
         <FileText />
       </Link>
     </Wrapper>

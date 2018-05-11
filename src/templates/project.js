@@ -71,14 +71,11 @@ export default class Project extends Component {
 
     return (
       <Wrapper>
-        <Main src={`/${slug}/${main}`} alt="" />
+        <Main src={`/portfolio/${slug}/${main}`} alt="" />
 
         <Header>{title}</Header>
         <Content dangerouslySetInnerHTML={createMarkup()} />
 
-        {/* <ImageWrapper>
-          {images.map(image => <img src={`/${slug}/${image}`} />)}
-        </ImageWrapper> */}
         <ButtonWrapper>
           {link ? (
             <Button href={link} target="_blank">

@@ -76,8 +76,8 @@ const Arrow = styled(ArrowLeft)`
   }
 `
 
-export default ({ location }) => {
-  const ifHome = location.pathname === '/'
+export default ({ location: l }) => {
+  const ifHome = l.pathname === '/' || l.pathname === '/portfolio'
   return (
     <span>
       {!ifHome && (
