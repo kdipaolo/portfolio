@@ -33,18 +33,18 @@ const Link = styled.a`
 export default () => {
   return (
     <Wrapper>
-      <Link href="https://github.com/kdipaolo">
+      <Link target="_blank" href="https://github.com/kdipaolo">
         <Github />
       </Link>
-      <Link href="https://twitter.com/KurtDipaolo">
+      <Link target="_blank" href="https://twitter.com/KurtDipaolo">
         <Twitter />
       </Link>
-      <Link href="https://www.linkedin.com/in/kurtdipaolo/">
+      <Link target="_blank" href="https://www.linkedin.com/in/kurtdipaolo/">
         <Linkedin />
       </Link>
-      <Link href="/portfolio/dipaolo_resume.pdf">
+      {/* <Link target="_blank" href="/portfolio/dipaolo_resume.pdf">
         <FileText />
-      </Link>
+      </Link> */}
     </Wrapper>
   )
 }
