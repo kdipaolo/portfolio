@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Kurt DiPaolo',
   },
+  pathPrefix: `/portfolio`,
   plugins: [
     'gatsby-plugin-react-helmet',
     {
