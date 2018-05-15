@@ -78,7 +78,7 @@ const Arrow = styled(ArrowLeft)`
 
 export default ({ location: l }) => {
   console.log(l.pathname)
-  const ifHome = l.pathname === '/' || l.pathname === '/portfolio'
+  const ifHome = l.pathname === '/' || l.pathname === '/portfolio/'
   return (
     <span>
       {!ifHome && (
