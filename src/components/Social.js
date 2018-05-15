@@ -1,5 +1,5 @@
 import React from 'react'
-import { Github, Twitter, Linkedin, FileText } from 'react-feather'
+import { Github, Twitter, Linkedin, FileText, Mail } from 'react-feather'
 import styled from 'styled-components'
 
 const mq = properties =>
@@ -9,8 +9,8 @@ const mq = properties =>
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  max-width: 200px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  max-width: 225px;
   justify-items: center;
   margin-top: 5px;
   ${mq(`
@@ -44,6 +44,9 @@ export default () => {
       </Link>
       <Link target="_blank" href="/portfolio/dipaolo_resume.pdf">
         <FileText />
+      </Link>
+      <Link target="_blank" href="mailto:kurt@kurtdipaolo.com">
+        <Mail />
       </Link>
     </Wrapper>
   )
