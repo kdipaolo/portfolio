@@ -23,7 +23,7 @@ const Inner = styled.div`
 const TemplateWrapper = ({ children, location }) => (
   <div>
     <Helmet
-      title="Gatsby Default Starter"
+      title="👋 Hey it's Kurt!"
       meta={[
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },

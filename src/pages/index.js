@@ -53,8 +53,11 @@ const IndexPage = ({ data }) => (
     <Header>Projects</Header>
 
     <List>
-      {data.allMarkdownRemark.edges.map(project => {
-        const { title, tags, slug } = project.node.frontmatter
+      {data.allMarkdownRemark.edges.sort((a,b) => { 
+        return a.node.frontmatter.order > b.node.frontmatter.order
+      }).map(project => {
+        const { title, tags, slug, order } = project.node.frontmatter
+        
 
         return (
           <LinkItem to={`/projects/${slug}`}>
@@ -93,6 +96,7 @@ export const pageQuery = graphql`
             title
             tags
             slug
+            order
           }
         }
       }
