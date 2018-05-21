@@ -71,7 +71,7 @@ export default class Project extends Component {
 
     return (
       <Wrapper>
-        <Main src={`/portfolio/${slug}/${main}`} alt="" />
+        <Main src={`/${slug}/${main}`} alt="" />
 
         <Header>{title}</Header>
         <Content dangerouslySetInnerHTML={createMarkup()} />

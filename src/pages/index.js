@@ -53,26 +53,28 @@ const IndexPage = ({ data }) => (
     <Header>Projects</Header>
 
     <List>
-      {data.allMarkdownRemark.edges.sort((a,b) => { 
-        return a.node.frontmatter.order > b.node.frontmatter.order
-      }).map(project => {
-        const { title, tags, slug, order } = project.node.frontmatter
-        
+      {data.allMarkdownRemark.edges
+        .sort((a, b) => {
+          return a.node.frontmatter.order > b.node.frontmatter.order
+        })
+        .map(project => {
+          const { title, tags, slug, order } = project.node.frontmatter
 
-        return (
-          <LinkItem to={`/projects/${slug}`}>
-            {title}
-            <Tags>{tags.join(' ● ')}</Tags>
-          </LinkItem>
-        )
-      })}
+          return (
+            <LinkItem to={`/projects/${slug}`}>
+              {title}
+              <Tags>{tags.join(' ● ')}</Tags>
+            </LinkItem>
+          )
+        })}
     </List>
 
     <Header>Skills</Header>
 
     <List>
-      <ListItem>JavaScript</ListItem>
+      <ListItem> JavaScript</ListItem>
       <ListItem> React.js</ListItem>
+      <ListItem> Redux</ListItem>
       <ListItem> ES2015+</ListItem>
       <ListItem> GraphQL</ListItem>
       <ListItem> RESTful API Design</ListItem>

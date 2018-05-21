@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import profile from '../../public/profile.jpg'
+import profile from '../images/profile.jpg'
 import Social from './Social'
 import { ArrowLeft } from 'react-feather'
 import Link from 'gatsby-link'
@@ -77,8 +77,7 @@ const Arrow = styled(ArrowLeft)`
 `
 
 export default ({ location: l }) => {
-  console.log(l.pathname)
-  const ifHome = l.pathname === '/' || l.pathname === '/portfolio/'
+  const ifHome = l.pathname === '/'
   return (
     <span>
       {!ifHome && (
