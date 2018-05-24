@@ -46,9 +46,14 @@ const IndexPage = ({ data }) => (
   <Wrapper>
     <Header>About</Header>
     <Content>
-      Self-disciplined developer, with a design eye, who cares deeply about the
-      quality of his work, passionate about learning new technologies, and
-      focused on the end goal.
+      I currently live in Cincinnati, and i’ve been working remotely full-time
+      for the past three years. I love working in the front-end with JavaScript,
+      and my preferred framework to use is React JS. I also enjoy working in the
+      back-end as well with technologies like Node JS and Express. I love
+      learning new things, whether that be through binge-watching front-end
+      masters courses or thinking up an app idea and seeing if I can make it
+      come to life. Lately, i’ve been enjoying working with GraphQL on the
+      server and the client side!
     </Content>
     <Header>Projects</Header>
 
