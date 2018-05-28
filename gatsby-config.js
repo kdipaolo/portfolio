@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Kurt DiPaolo',
+    pathPrefix: 'https://www.kurtdipaolo.com/',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
