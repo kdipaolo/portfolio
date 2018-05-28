@@ -2,7 +2,7 @@
 date: "2017-11-07"
 title: "Bid Like A Boss"
 slug: "bid-like-a-boss"
-main: "/static/bid-like-a-boss/main.png"
+main: "main.png"
 link: "https://app.bidlikeaboss.com/"
 images: ["ss-1.png", "ss-2.png", "ss-3.png", "ss-4.png"]
 tags: ["React", "GraphQL", "Apollo", "Styled Components"]
