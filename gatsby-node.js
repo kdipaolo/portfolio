@@ -1,8 +1,10 @@
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const path = require('path')
+var fs = require('fs-extra')
 
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators
+
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode, basePath: `projects` })
 
@@ -17,6 +19,10 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
 
+  const resumePath = path.resolve(__dirname, `./src/dipaolo_resume.pdf`)
+  const prodResumePath = path.resolve(__dirname, `./public/dipaolo_resume.pdf`)
+  fs.copySync(resumePath, prodResumePath)
+
   const projectTemplate = path.resolve(`src/templates/project.js`)
 
   return graphql(`
@@ -29,6 +35,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           node {
             frontmatter {
               slug
+              main
             }
           }
         }
@@ -40,7 +47,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     }
 
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      console.log(node.frontmatter.slug)
       createPage({
         path: `/projects/${node.frontmatter.slug}`,
         component: projectTemplate,
@@ -48,6 +54,16 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           slug: node.frontmatter.slug,
         },
       })
+
+      const devImagePath = path.resolve(
+        __dirname,
+        `./src/images/${node.frontmatter.slug}/main.png`
+      )
+      const prodLocation = path.resolve(
+        __dirname,
+        `./public/projects/${node.frontmatter.slug}/images/main.png`
+      )
+      fs.copySync(devImagePath, prodLocation)
     })
   })
 }
