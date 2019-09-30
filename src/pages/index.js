@@ -44,7 +44,7 @@ const Tags = styled.span`
 
 const IndexPage = ({ data }) => (
   <Wrapper>
-    <Header>About</Header>
+    {/* <Header>About</Header>
     <Content>
       I currently live in Cincinnati, and i’ve been working remotely full-time
       for the past three years. I love working in the front-end with JavaScript,
@@ -54,7 +54,7 @@ const IndexPage = ({ data }) => (
       masters courses or thinking up an app idea and seeing if I can make it
       come to life. Lately, i’ve been enjoying working with GraphQL on the
       server and the client side!
-    </Content>
+    </Content> */}
     <Header>Projects</Header>
 
     <List>

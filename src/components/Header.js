@@ -87,12 +87,12 @@ export default ({ location: l }) => {
       )}
       <Wrapper>
         <Heading>
-          <Emphasis>Kurt DiPaolo</Emphasis> is a front-end developer. He
-          currently works for a dev shop called{' '}
-          <SLink href="https://www.streamlinedstudio.com/" target="_blank">
-            Streamlined Studio
+          <Emphasis>Kurt DiPaolo</Emphasis> is a full-stack developer. He
+          currently works for {' '}
+          <SLink href="https://teamgaslight.com/" target="_blank">
+            Gaslight
           </SLink>{' '}
-          helping build rich web applications.
+          helping to solve problems.
           <Social />
         </Heading>
         <ProfileImg src={profile} alt="A Picture of Kurt DiPaolo" />
