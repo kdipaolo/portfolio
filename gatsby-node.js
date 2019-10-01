@@ -24,6 +24,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   fs.copySync(resumePath, prodResumePath)
 
   const projectTemplate = path.resolve(`src/templates/project.js`)
+  const learningTemplate = path.resolve(`src/templates/learnings.js`)
 
   return graphql(`
     {
@@ -47,23 +48,33 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     }
 
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: `/projects/${node.frontmatter.slug}`,
-        component: projectTemplate,
-        context: {
-          slug: node.frontmatter.slug,
-        },
-      })
+      if (node.frontmatter.main) {
+        createPage({
+          path: `/projects/${node.frontmatter.slug}`,
+          component: projectTemplate,
+          context: {
+            slug: node.frontmatter.slug,
+          },
+        })
 
-      const devImagePath = path.resolve(
-        __dirname,
-        `./src/images/${node.frontmatter.slug}/main.png`
-      )
-      const prodLocation = path.resolve(
-        __dirname,
-        `./public/projects/${node.frontmatter.slug}/images/main.png`
-      )
-      fs.copySync(devImagePath, prodLocation)
+        const devImagePath = path.resolve(
+          __dirname,
+          `./src/images/${node.frontmatter.slug}/main.png`
+        )
+        const prodLocation = path.resolve(
+          __dirname,
+          `./public/projects/${node.frontmatter.slug}/images/main.png`
+        )
+        fs.copySync(devImagePath, prodLocation)
+      } else {
+        createPage({
+          path: `/learnings/${node.frontmatter.slug}`,
+          component: learningTemplate,
+          context: {
+            slug: node.frontmatter.slug,
+          },
+        })
+      }
     })
   })
 }

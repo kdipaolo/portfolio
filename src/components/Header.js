@@ -78,6 +78,7 @@ const Arrow = styled(ArrowLeft)`
 
 export default ({ location: l }) => {
   const ifHome = l.pathname === '/'
+  const ifLearning = l.pathname.includes('learnings')
   return (
     <span>
       {!ifHome && (
@@ -85,18 +86,20 @@ export default ({ location: l }) => {
           <Arrow />
         </Link>
       )}
-      <Wrapper>
-        <Heading>
-          <Emphasis>Kurt DiPaolo</Emphasis> is a full-stack developer. He
-          currently works for {' '}
-          <SLink href="https://teamgaslight.com/" target="_blank">
-            Gaslight
-          </SLink>{' '}
-          helping to solve problems.
-          <Social />
-        </Heading>
-        <ProfileImg src={profile} alt="A Picture of Kurt DiPaolo" />
-      </Wrapper>
+      {!ifLearning && (
+        <Wrapper>
+          <Heading>
+            <Emphasis>Kurt DiPaolo</Emphasis> is a full-stack developer. He
+            currently works for{' '}
+            <SLink href="https://teamgaslight.com/" target="_blank">
+              Gaslight
+            </SLink>{' '}
+            helping to solve problems.
+            <Social />
+          </Heading>
+          <ProfileImg src={profile} alt="A Picture of Kurt DiPaolo" />
+        </Wrapper>
+      )}
     </span>
   )
 }

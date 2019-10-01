@@ -58,20 +58,21 @@ const IndexPage = ({ data }) => (
     <Header>Projects</Header>
 
     <List>
-      {data.allMarkdownRemark.edges
-        .sort((a, b) => {
-          return a.node.frontmatter.order > b.node.frontmatter.order
-        })
-        .map(project => {
-          const { title, tags, slug, order } = project.node.frontmatter
+      {data &&
+        data.allMarkdownRemark.edges
+          .sort((a, b) => {
+            return a.node.frontmatter.order > b.node.frontmatter.order
+          })
+          .map(project => {
+            const { title, tags, slug, order } = project.node.frontmatter
 
-          return (
-            <LinkItem to={`/projects/${slug}`}>
-              {title}
-              <Tags>{tags.join(' ● ')}</Tags>
-            </LinkItem>
-          )
-        })}
+            return (
+              <LinkItem to={`/projects/${slug}`}>
+                {title}
+                <Tags>{tags.join(' ● ')}</Tags>
+              </LinkItem>
+            )
+          })}
     </List>
 
     <Header>Skills</Header>
