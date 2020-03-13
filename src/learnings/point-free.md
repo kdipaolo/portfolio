@@ -8,7 +8,7 @@ Fixed function is the idea of if you have more than 1 input, you fix an input to
 
 Point free essentially means defining a function without having to declare its inputs or points
 
-```
+```javascript
 // person is the point/input
 // onPerson and renderPerson have the same shape
 // since they have the same shape their interchangeable
